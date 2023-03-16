@@ -814,7 +814,8 @@ button {
   background-repeat: no-repeat;
   background-size: 10px 8px;
   background-position: center;
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-form-check:focus + .modal-form-check-desk::before {
   border-color: #404bbf;
