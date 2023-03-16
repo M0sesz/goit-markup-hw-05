@@ -38,6 +38,9 @@ img {
   max-width: 100%;
   height: auto;
 }
+textarea {
+  resize: none;
+}
 a,
 li {
   list-style-type: none;
@@ -314,6 +317,7 @@ li {
 }
 .team-socials-link:focus {
   background: #404bbf;
+  border-color: var(--pressed-state);
 }
 
 .customers-link:hover,
@@ -389,8 +393,7 @@ li {
   border-radius: 50%;
   fill: var(--light);
 }
-.footer-icon {
-}
+
 .footer-container {
   display: flex;
 }
@@ -403,9 +406,72 @@ li {
   font-weight: 500;
 }
 .footer-link:hover,
-footer-link:focus {
+.footer-link:focus {
   background-color: #31d0aa;
 }
+
+.subscribe-container {
+  display: flex;
+  margin-left: 80px;
+}
+.text-footer {
+  margin-left: 80px;
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}
+.input-footer {
+  display: flex;
+  width: 264px;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  padding-left: 16px;
+  color: var(--light);
+}
+.form-footer-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 24px;
+  font-weight: 500;
+  min-width: 165px;
+  height: 40px;
+  color: var(--light);
+  background: #4d5ae5;
+  border-radius: 4px;
+  border: none;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-footer-button:hover {
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+  background-color: var(--pressed-state);
+  color: var(--light);
+  border-color: var(--pressed-state);
+}
+.form-footer-button:focus {
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+  background-color: var(--pressed-state);
+  color: var(--light);
+  border-color: var(--pressed-state);
+}
+
+.subscribe-icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 16px;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -424,7 +490,7 @@ footer-link:focus {
 button {
   cursor: pointer;
 }
-.hero button:hover,
+
 button:focus {
   background-color: var(--pressed-state);
 }
@@ -560,16 +626,8 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(46, 47, 66, 0.4);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   visibility: visible;
-
   background-color: rgba(46, 47, 66, 0.4);
-
   opacity: 1;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -614,4 +672,173 @@ button {
 .modal-button:focus {
   background-color: #404bbf;
   fill: #ffffff;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 360px;
+  height: 336px;
+}
+
+.icon-form {
+  position: absolute;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  transform: translateY(-50%);
+  background-color: tomato;
+}
+.form-title {
+  width: 360px;
+  height: 24px;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.modal-form-item {
+  position: relative;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.modal-form-item:last-child {
+  margin-bottom: 16px;
+}
+
+.modal-label-text {
+  display: block;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.01em;
+  color: var(--subtle-text);
+  margin-bottom: 4px;
+}
+
+.label-name {
+  line-height: 16px;
+  letter-spacing: 0.04em;
+}
+
+.modal-input {
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  width: 360px;
+  height: 40px;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.04em;
+  padding: 8px 16px;
+  outline: transparent;
+  padding-left: 38px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-input:last-child {
+  padding-left: 16px;
+}
+.modal-input-icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  height: 18px;
+  width: 18px;
+  fill: var(--dark);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-textarea {
+  height: 120px;
+}
+
+.modal-form-item textarea::placeholder {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.04em;
+  color: rgba(117, 117, 117, 0.5);
+}
+.button-form {
+  width: 169px;
+  height: 56px;
+  background: #4d5ae5;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 0;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 16px 32px;
+  border: 0;
+  color: var(--light);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.privacy-link {
+  text-decoration: underline;
+  color: #404bbf;
+}
+
+.modal-form-check-desk {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+  margin-bottom: 24px;
+}
+
+.link-form {
+  text-decoration: underline;
+}
+
+.modal-form-check-desk::before {
+  display: block;
+  content: '';
+  width: 16px;
+  height: 16px;
+  border: 1px solid #2e2f42;
+  border-radius: 2px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.modal-form-check:checked + .modal-form-check-desk::before {
+  background-color: #404bbf;
+  background-image: url(../images/check.svg);
+  background-repeat: no-repeat;
+  background-size: 10px 8px;
+  background-position: center;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-form-check:focus + .modal-form-check-desk::before {
+  border-color: #404bbf;
+}
+.modal-form-check:hover + .modal-form-check-desk::before {
+  border-color: #404bbf;
+}
+
+.modal-input:hover,
+.modal-input:focus {
+  border-color: #4d5ae5;
+}
+
+.modal-input:hover + .modal-input-icon {
+  fill: #4d5ae5;
+}
+.modal-input:focus + .modal-input-icon {
+  fill: #4d5ae5;
+}
+.button-form:hover,
+.button-form:focus {
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+  background-color: var(--pressed-state);
+  color: var(--light);
+  border-color: var(--pressed-state);
 }
